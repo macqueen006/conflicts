@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./src/style.css"/>
 </head>
 <body>
-<header class="py-3 fixed inset-[0%_0%_auto] bg-primary z-10">
+<header class="py-3 fixed inset-[0%_0%_auto] bg-primary z-20">
     <div class="container-base container-full">
         <div class="flex justify-between items-center">
             <a href="#" class="">
@@ -119,15 +119,77 @@
         </nav>
     </div>
 </header>
+
 <section class="relative block h-screen">
     <div class="absolute inset-0 w-full h-full z-1">
         <div id="map"></div>
     </div>
-    <div class="absolute inset-0 w-full h-full z-2 bg-[#00000070]"></div>
-    <div class="container-base z-2">
-
+    <div class="absolute inset-0 w-full h-full z-2 bg-[#00000090]"></div>
+    <div class="container-base relative z-10 pb-8 flex flex-col justify-end h-full">
+        <div class="flex flex-col">
+            <div class="flex flex-col-reverse md:flex-row gap-14 justify-between border-b border-[#ffffff1a] pb-14">
+                <div class="max-w-[490px] flex flex-col justify-start items-start">
+                    <div class="flex gap-10 items-center">
+                        <div class="flex gap-2.5 items-center">
+                            <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee959464ed700c7614bdba_Rectangle%201%20(1).svg"
+                                 loading="lazy"
+                                 width="44"
+                                 height="44"
+                                 alt="">
+                            <h6 class="text-white">Driven</h6>
+                        </div>
+                        <div class="flex gap-2.5 items-center">
+                            <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee959464ed700c7614bdba_Rectangle%201%20(1).svg"
+                                 loading="lazy"
+                                 width="44"
+                                 height="44"
+                                 alt="">
+                            <h6 class="text-white">Rooted</h6>
+                        </div>
+                        <div class="flex gap-2.5 items-center">
+                            <img
+                                    src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee959464ed700c7614bdba_Rectangle%201%20(1).svg"
+                                    loading="lazy"
+                                    width="44"
+                                    height="44"
+                                    alt="">
+                            <h6 class="text-white">Impactful</h6>
+                        </div>
+                    </div>
+                    <div class="pt-2.5 pb-10 font-medium text-xl text-white">Through sustainable farming and smart collaboration, we grow more
+                        than crops — we grow impact.
+                    </div>
+                    <div>
+                        <a href="/contact-us" class="space-y-2.5">
+                            <div class="flex items-center gap-12">
+                                <div class="text-white font-medium text-xl">Start growing with us</div>
+                                <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee96d781f57edc797a59ed_Frame%20(46).svg"
+                                     loading="lazy" alt="icon" class="arrow-burron-icon">
+                            </div>
+                            <div class="bg-white h-px"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="max-w-[460px] md:text-right">
+                    <h1 class="text-white font-medium my-2.5 text-5xl md:text-7xl">Redefining agriculture at a global scale</h1>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 pt-8">
+                <h6 class="text-white without-space">35.6895° N, 139.6917° E</h6>
+                <a href="#About-Section">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <div class="text-white">Start growing with us</div>
+                            <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee96d781f57edc797a59ed_Frame%20(46).svg"
+                                 loading="lazy" alt="icon" class="rotate-90">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 </section>
+
 <section class=""></section>
 <section class=""></section>
 <section class=""></section>
@@ -138,7 +200,7 @@
 <section class=""></section>
 <section class=""></section>
 <footer class=""></footer>
-<script type="module" src="/src/main.js"></script>
+
 <script>
     // Initialize map centered on Southern Nigeria
     const map = L.map('map', {
@@ -229,5 +291,6 @@
         map.scrollWheelZoom.disable();
     }
 </script>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>

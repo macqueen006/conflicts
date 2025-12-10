@@ -9,8 +9,9 @@ function toggleMenu() {
 
     if (btn && menu) {
         // Toggle menu on button click
-        btn.addEventListener('click', function(e){
+        btn.addEventListener('click', function (e) {
             e.stopPropagation();
+            console.log('i have been toggled!')
             menu.classList.toggle('-translate-x-full');
 
             // If menu is now open, add listeners
@@ -22,7 +23,7 @@ function toggleMenu() {
         });
 
         if (closeBtn) {
-            closeBtn.addEventListener('click', function(e){
+            closeBtn.addEventListener('click', function (e) {
                 e.stopPropagation();
                 closeMenu();
             });
@@ -62,5 +63,7 @@ function toggleMenu() {
     }
 }
 
-// Initialize
-toggleMenu();
+window.addEventListener('load', () => {
+    toggleMenu();
+});
+
