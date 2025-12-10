@@ -1,0 +1,384 @@
+@import "tailwindcss";
+
+@theme {
+    /* Primary Colors */
+    --color-primary-dark: #002c11;
+    --color-primary: #035925;
+    --color-primary-light: #04732f;
+
+    /* Neutral Colors */
+    --color-black: #000000;
+    --color-gray-900: #333333;
+    --color-gray-600: #585858;
+    --color-gray-400: #ebebeb;
+    --color-gray-100: #fafafa;
+    --color-white: #ffffff;
+
+    /* Secondary/Accent Colors */
+    --color-orange: #f5e197;
+    --color-red: #eecbaa;
+    --color-yellow: #ffff7e;
+
+    /* Utility Colors */
+    --color-white-20: rgba(255, 255, 255, 0.2);
+
+    /* Semantic Colors (for your documentation platform) */
+    --color-alert: #ff6b35;
+    --color-verified: #0ea5e9;
+    --color-evidence: #8b5cf6;
+
+    /* Fonts */
+    --font-sans: 'Instrument Sans', sans-serif;
+    --font-mono: 'Inconsolata', 'SF Mono', 'Monaco', 'Courier New', monospace;
+
+    /* Headings */
+    --font-size-h1: 4rem;        /* 64px */
+    --line-height-h1: 1.1;
+    --letter-spacing-h1: -0.02em;
+
+    --font-size-h2: 2.5rem;      /* 40px */
+    --line-height-h2: 1.2;
+    --letter-spacing-h2: -0.02em;
+
+    --font-size-h3: 1.75rem;     /* 28px */
+    --line-height-h3: 1.2;
+    --letter-spacing-h3: -0.02em;
+
+    --font-size-h4: 1.625rem;    /* 26px */
+    --line-height-h4: 1.3;
+    --letter-spacing-h4: -0.02em;
+
+    --font-size-h5: 1.25rem;     /* 20px */
+    --line-height-h5: 1.2;
+    --letter-spacing-h5: -0.02em;
+
+    --font-size-h6: 1rem;        /* 16px */
+    --line-height-h6: 1.5;
+    --letter-spacing-h6: -0.03em;
+
+    /* Body Text */
+    --font-size-base: 1rem;      /* 16px */
+    --line-height-base: 1.5;
+    --letter-spacing-base: -0.02em;
+
+    --font-size-lg: 1.5rem;      /* 24px */
+    --line-height-lg: 1.2;
+
+    --font-size-sm: 0.875rem;    /* 14px */
+    --line-height-sm: 1.5;
+
+    /* Display Sizes */
+    --font-size-display: 4.375rem; /* 70px */
+    --font-size-jumbo: 12.5rem;    /* 200px */
+    /* Spacing Scale */
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;    /* 4px */
+    --spacing-2: 0.5rem;     /* 8px */
+    --spacing-3: 0.75rem;    /* 12px */
+    --spacing-4: 1rem;       /* 16px */
+    --spacing-5: 1.25rem;    /* 20px */
+    --spacing-6: 1.5rem;     /* 24px */
+    --spacing-8: 2rem;       /* 32px */
+    --spacing-10: 2.5rem;    /* 40px */
+    --spacing-12: 3rem;      /* 48px */
+    --spacing-16: 4rem;      /* 64px */
+    --spacing-20: 5rem;      /* 80px */
+    --spacing-24: 6rem;      /* 96px */
+    --spacing-32: 8rem;      /* 128px */
+    --spacing-40: 10rem;     /* 160px */
+    --spacing-48: 12rem;     /* 192px */
+    /* Section Spacing */
+    --spacing-section-sm: 3.75rem;   /* 60px */
+    --spacing-section-md: 5rem;      /* 80px */
+    --spacing-section-lg: 7.5rem;    /* 120px */
+    /* Shadows */
+    --shadow-sm: 0 0 10px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 0 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 0 30px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.25);
+    --shadow-card: 0 0 30px rgba(20, 23, 51, 0.08);
+
+    /* Duration */
+    --duration-fast: 200ms;
+    --duration-base: 300ms;
+    --duration-slow: 350ms;
+
+    /* Easing */
+    --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --ease-smooth: cubic-bezier(0.77, 0, 0.175, 1);
+
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@layer base {
+    body {
+        @apply font-sans;
+    }
+}
+
+
+@layer components {
+    #map {
+        @apply h-screen;
+    }
+
+    /* Primary Button */
+    .btn-primary {
+        @apply bg-primary text-white font-medium text-base leading-relaxed;
+        @apply rounded-full px-5 py-3.5;
+        @apply transition-all duration-350 ease-in-out;
+        @apply hover:bg-gradient-to-r hover:from-orange hover:via-yellow hover:to-red;
+    }
+
+    /* Secondary Button */
+    .btn-secondary {
+        @apply bg-white/20 backdrop-blur-sm text-white;
+        @apply rounded-full px-5 py-4.5;
+        @apply font-medium leading-relaxed;
+        @apply transition-all duration-350;
+        @apply hover:bg-white hover:text-primary;
+    }
+
+    /* Text Button */
+    .btn-text {
+        @apply text-primary font-medium;
+        @apply transition-colors duration-200;
+        @apply hover:text-black;
+    }
+
+    /* Light Gray Card */
+    .card-light {
+        @apply bg-gray-100 rounded-lg p-5;
+        @apply flex flex-col justify-between;
+    }
+
+    /* Primary Card */
+    .card-primary {
+        @apply bg-primary rounded-lg p-5;
+        @apply text-white;
+    }
+
+    /* Black Card */
+    .card-black {
+        @apply bg-black rounded-lg p-5;
+        @apply text-white;
+    }
+
+    /* White Card with Shadow */
+    .card-white {
+        @apply bg-white rounded-lg p-8;
+        @apply shadow-card;
+    }
+
+    /* Section Label */
+    .label-section {
+        @apply inline-flex items-center gap-2.5;
+        @apply bg-white border border-gray-400;
+        @apply rounded-full px-3 py-1;
+        @apply text-base font-medium;
+    }
+
+    /* Category Badge */
+    .badge-category {
+        @apply bg-primary text-white;
+        @apply rounded-full px-3 py-1;
+        @apply text-base font-medium;
+        @apply transition-all duration-200;
+        @apply hover:bg-gradient-to-r hover:from-orange hover:via-yellow hover:to-red;
+    }
+
+    /* Status Badge */
+    .badge-status {
+        @apply bg-gray-400 text-gray-600;
+        @apply rounded-md px-3 py-1;
+        @apply text-base font-medium;
+    }
+
+    /* Underlined Link */
+    .link-underlined {
+        @apply flex flex-col gap-2;
+        @apply text-white text-xl font-medium;
+        @apply transition-all duration-200;
+    }
+
+    .link-underlined::after {
+        content: '';
+        @apply block w-full h-px bg-white;
+        @apply transition-all duration-200;
+    }
+
+    .link-underlined:hover::after {
+        @apply w-3/4;
+    }
+
+    .container-base {
+        @apply max-w-[1200px] mx-auto px-4;
+    }
+
+    /* Wide Container */
+    .container-wide {
+        @apply max-w-[1440px] mx-auto px-4;
+    }
+
+    /* Full Width Container */
+    .container-full {
+        @apply w-full px-4;
+    }
+
+    .w-container {
+        @apply max-w-[940px] mx-auto
+    }
+
+    /* Standard Section */
+    .section {
+        @apply py-20 relative overflow-hidden;
+    }
+
+    /* Section with Light Background */
+    .section-light {
+        @apply bg-gray-100;
+    }
+
+    /* Section with Dark Background */
+    .section-dark {
+        @apply bg-primary-dark text-white;
+    }
+
+    /* Hero Section */
+    .section-hero {
+        @apply pt-36 pb-20;
+        @apply bg-primary-dark text-white;
+    }
+
+    /* Stats Grid (3 columns) */
+    .grid-stats {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10;
+    }
+
+    /* Service Grid (3 columns) */
+    .grid-services {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5;
+    }
+
+    /* Team Grid (4 columns) */
+    .grid-team {
+        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10;
+    }
+
+    /* Blog Grid (2-3 columns) */
+    .grid-blog {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5;
+    }
+
+    /* Card Image */
+    .img-card {
+        @apply w-full h-full object-cover rounded-lg;
+    }
+
+    /* Hero Image */
+    .img-hero {
+        @apply w-full max-w-[85%] mx-auto;
+    }
+
+    /* Team Photo */
+    .img-team {
+        @apply w-full h-80 object-cover rounded-lg;
+    }
+
+    /* Service Card Image */
+    .img-service {
+        @apply w-full h-60 object-cover rounded-lg;
+    }
+
+    /* Input Field */
+    .input-field {
+        @apply w-full px-4.5 py-4;
+        @apply bg-gray-100 border border-gray-100;
+        @apply rounded text-black;
+        @apply text-base leading-tight;
+        @apply transition-all duration-200;
+        @apply focus:border-primary focus:outline-none;
+    }
+
+    .input-field::placeholder {
+        @apply text-gray-600;
+    }
+
+    /* Textarea */
+    .textarea-field {
+        @apply w-full min-h-[200px] px-4.5 py-4;
+        @apply bg-gray-100 border border-gray-100;
+        @apply rounded text-black;
+        @apply resize-y;
+        @apply transition-all duration-200;
+        @apply focus:border-primary focus:outline-none;
+    }
+
+    /* Text Colors */
+    .text-primary {
+        @apply text-primary;
+    }
+
+    .text-white {
+        @apply text-white;
+    }
+
+    .text-gray {
+        @apply text-gray-600;
+    }
+
+    .text-black {
+        @apply text-black;
+    }
+
+    /* Text Styles */
+    .text-gradient {
+        @apply bg-gradient-to-r from-orange via-yellow to-red;
+        @apply bg-clip-text text-transparent;
+    }
+
+    /* Font Weights */
+    .font-medium {
+        @apply font-medium;
+    }
+
+    .font-bold {
+        @apply font-bold;
+    }
+
+    /* Background Overlays */
+    .overlay-dark {
+        @apply absolute inset-0 bg-black/40;
+    }
+
+    .overlay-gradient {
+        @apply absolute inset-0;
+        @apply bg-gradient-to-t from-black/90 to-transparent;
+    }
+
+    /* Blur Effects */
+    .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .backdrop-blur-md {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>conflict-documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="./src/style.css"/>
+</head>
+<body>
+<header class="py-3 fixed inset-[0%_0%_auto] bg-primary z-10">
+    <div class="container-base container-full">
+        <div class="flex justify-between items-center">
+            <a href="#" class="">
+                <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee85109f6d16b7cab37b3f_c5ab28eb37a4c84b2bb8d9cbdb8cac15_Group%201.svg"
+                     loading="lazy" alt="Logo" height="30" class="logo">
+            </a>
+            <nav class="hidden lg:flex items-center justify-end">
+                <!-- Nav items -->
+                <a href="/"
+                   class="relative inline-block overflow-hidden group px-5 py-2 hover:underline text-white hover:underline-offset-[5px]">
+                    <p class="text-white font-medium">Home</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group px-5 py-2 hover:underline text-white hover:underline-offset-[5px]">
+                    <p class="text-white font-medium">About Us</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group px-5 py-2 hover:underline text-white hover:underline-offset-[5px]">
+                    <p class="text-white font-medium">Services</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group px-5 py-2 hover:underline text-white hover:underline-offset-[5px]">
+                    <p class="text-white font-medium">Pricing</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group px-5 py-2 hover:underline text-white hover:underline-offset-[5px]">
+                    <p class="text-white font-medium">Contact Us</p>
+                </a>
+            </nav>
+
+            <div class="hidden lg:block">
+                <a href="#"
+                   class="backdrop-blur-md rounded-full px-5 py-4 bg-white-20 text-white font-medium inline-flex items-center gap-2 transition-all">
+                    Let's work together
+                </a>
+            </div>
+            <div class="text-white cursor-pointer lg:hidden block" id="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-nav"
+         class="w-[320px] h-[765px] absolute top-0 left-0 overflow-hidden lg:hidden bg-white -translate-x-full transition-transform duration-500">
+        <nav role="navigation" class="nav-menu w-nav-menu">
+
+            <!-- Mobile Header -->
+            <div class="tablet-menu flex justify-between items-center p-3">
+                <a href="/home" aria-current="page">
+                    <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67f3a7eeec27e86f08823bf4_0ea11bb1e0bb93359555ba23023d935d_Group%201%20%281%29.svg"
+                         loading="lazy" alt="Logo" height="30" class="logo">
+                </a>
+                <button id="close-mobile-menu" class="close-menu-button w-nav-button cursor-pointer"
+                        aria-label="Close menu" role="button">
+                    <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee63cb3895632eb840cc1c_close-btn.svg"
+                         loading="lazy" alt="Close icon" class="nav-close-icon">
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="px-5 pt-5 flex flex-col">
+                <!-- Regular Nav Links -->
+                <a href="/"
+                   class="relative inline-block overflow-hidden group py-2 hover:underline hover:underline-offset-[5px]">
+                    <p class="font-medium">Home</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group py-2 hover:underline hover:underline-offset-[5px]">
+                    <p class="font-medium">About Us</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group py-2 hover:underline hover:underline-offset-[5px]">
+                    <p class="font-medium">Services</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group py-2 hover:underline hover:underline-offset-[5px]">
+                    <p class="font-medium">Pricing</p>
+                </a>
+                <a href="/"
+                   class="relative inline-block overflow-hidden group py-2 hover:underline hover:underline-offset-[5px]">
+                    <p class="font-medium">Contact Us</p>
+                </a>
+
+                <!-- CTA Button -->
+                <div class="lg:hidden mt-5">
+                    <a href="#"
+                       class="bg-primary rounded-full px-5 py-4 text-white font-medium inline-flex items-center gap-2">
+                        <img src="https://cdn.prod.website-files.com/67ee63cb3895632eb840c962/67ee959464ed700c7614bdba_Rectangle%201%20(1).svg"
+                             loading="lazy" alt="">
+                        <div>Let's work together</div>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="relative block h-screen">
+    <div class="absolute inset-0 w-full h-full z-1">
+        <div id="map"></div>
+    </div>
+    <div class="absolute inset-0 w-full h-full z-2 bg-[#00000070]"></div>
+    <div class="container-base z-2">
+
+    </div>
+</section>
+<section class=""></section>
+<section class=""></section>
+<section class=""></section>
+<section class=""></section>
+<section class=""></section>
+<section class=""></section>
+<section class=""></section>
+<section class=""></section>
+<section class=""></section>
+<footer class=""></footer>
+<script type="module" src="/src/main.js"></script>
+<script>
+    // Initialize map centered on Southern Nigeria
+    const map = L.map('map', {
+        center: [6.5, 5.5],
+        zoom: 7,
+        zoomControl: false,
+        attributionControl: false
+    });
+
+    // Add dark themed tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add labels overlay for better readability
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        attribution: '&copy; CARTO'
+    }).addTo(map);
+
+    // Southern Nigeria states data with coordinates
+    const southernStates = [
+        // South-West
+        {name: 'Lagos', coords: [6.5244, 3.3792], type: 'security'},
+        {name: 'Ogun', coords: [7.1605, 3.3470], type: 'infrastructure'},
+        {name: 'Oyo', coords: [7.8467, 3.9330], type: 'environmental'},
+        {name: 'Osun', coords: [7.5629, 4.5200], type: 'security'},
+        {name: 'Ondo', coords: [7.2500, 5.1950], type: 'environmental'},
+        {name: 'Ekiti', coords: [7.7190, 5.3100], type: 'infrastructure'},
+
+        // South-South
+        {name: 'Rivers', coords: [4.8156, 6.9778], type: 'security'},
+        {name: 'Delta', coords: [5.6804, 5.8900], type: 'environmental'},
+        {name: 'Bayelsa', coords: [4.7719, 6.0699], type: 'environmental'},
+        {name: 'Akwa Ibom', coords: [4.9057, 7.8500], type: 'security'},
+        {name: 'Cross River', coords: [5.8736, 8.5989], type: 'infrastructure'},
+        {name: 'Edo', coords: [6.3350, 5.6220], type: 'security'},
+
+        // South-East
+        {name: 'Abia', coords: [5.4527, 7.5248], type: 'security'},
+        {name: 'Anambra', coords: [6.2209, 6.9378], type: 'infrastructure'},
+        {name: 'Ebonyi', coords: [6.2649, 8.0137], type: 'environmental'},
+        {name: 'Enugu', coords: [6.5374, 7.5105], type: 'security'},
+        {name: 'Imo', coords: [5.5720, 7.0588], type: 'infrastructure'}
+    ];
+
+    // Color coding for incident types
+    const colors = {
+        security: '#ef4444',
+        environmental: '#eab308',
+        infrastructure: '#3b82f6'
+    };
+
+    // Add markers for each state
+    southernStates.forEach(state => {
+        const marker = L.circleMarker(state.coords, {
+            radius: 8,
+            fillColor: colors[state.type],
+            color: '#fff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+        }).addTo(map);
+
+        // Add popup with state information
+        marker.bindPopup(`
+                <div class="p-2">
+                    <h3 class="font-bold text-lg">${state.name} State</h3>
+                    <p class="text-sm text-gray-800">Type: ${state.type}</p>
+                    <p class="text-sm text-gray-800">Status: Active monitoring</p>
+                </div>
+            `);
+
+        // Add pulsing animation
+        marker.on('mouseover', function () {
+            this.setRadius(12);
+        });
+        marker.on('mouseout', function () {
+            this.setRadius(8);
+        });
+    });
+
+    // Disable drag and zoom on mobile for better UX
+    if (window.innerWidth < 768) {
+        map.dragging.disable();
+        map.touchZoom.disable();
+        map.scrollWheelZoom.disable();
+    }
+</script>
+</body>
+</html>
