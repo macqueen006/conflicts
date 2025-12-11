@@ -134,6 +134,9 @@
 
 
 @layer components {
+    .check {
+        @apply border border-red-500;
+    }
     #map {
         @apply h-screen;
     }
