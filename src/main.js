@@ -67,3 +67,14 @@ window.addEventListener('load', () => {
     toggleMenu();
 });
 
+
+// Calculates the exact position accounting for fixed header
+const headerOffset = 200;
+const elementPosition = target.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+// Smooth scroll to that position
+window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+});
